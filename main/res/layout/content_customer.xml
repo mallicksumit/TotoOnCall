@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/relativecustomer"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Customer"
+    tools:showIn="@layout/app_bar_customer">
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Customer" />
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        >
+        <fragment
+            android:id="@+id/place_autocomplete_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+            />
+
+    </android.support.v7.widget.CardView>
+
+
+    <LinearLayout
+        android:id="@+id/DriverInfo"
+        android:layout_width="match_parent"
+        android:layout_height="165dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="81dp"
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profileDriver"
+            android:layout_width="100sp"
+            android:layout_height="100sp"
+            android:padding="20sp"
+            android:src="@drawable/ic_menu_camera" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="40sp">
+
+
+            <TextView
+                android:id="@+id/DriverName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10sp"
+                android:paddingTop="20sp" />
+
+            <TextView
+                android:id="@+id/DriverPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="20sp"
+                android:paddingTop="10sp" />
+
+            <TextView
+                android:id="@+id/DriverCar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="20sp"
+                android:paddingTop="10sp" />
+
+            <TextView
+                android:id="@+id/DriverCarNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="20sp"
+                android:paddingTop="10sp" />
+            <RatingBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ratingBar"
+                android:layout_gravity="center"
+                android:numStars="5"
+                android:stepSize="0.1"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="bottom"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/radiogroup"
+            android:layout_width="390dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/Reserved"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reserved" />
+
+            <RadioButton
+                android:id="@+id/NormalPickUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PickUp" />
+
+            <RadioButton
+                android:id="@+id/Both"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Both" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/calldriver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="call toto" />
+    </LinearLayout>
+
+</RelativeLayout>
